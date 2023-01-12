@@ -1,0 +1,19 @@
+body{
+    margin-left: 20%;
+    margin-right: 10%;
+    font-family: sans-serif;
+}
+
+#page-heading{
+    text-align: center;
+    margin-top: 25 px;
+    color: gray;
+}
+.contacts{
+    text-align: center;
+}
+#box{
+    
+    background-color: aqua;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+} 
