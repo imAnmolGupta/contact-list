@@ -19,11 +19,11 @@ var contactList = [
         phone: "1111111111"
     },
     {
-        name: "Tony Stark",
+        name: "Stark",
         phone: "1234567890"
     },
     {
-        name: "Coding Ninjas",
+        name: "Ninjas",
         phone: "12131321321"
     }
 ]

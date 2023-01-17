@@ -8,39 +8,44 @@
     </head>
     <body>
         <div class = "main-container">
-            <h2>Contact list</h1>
-            <i class="fa-solid fa-address-card"></i>
+            <h2>Contact list</h2>
+            <i class="fa-solid fa-address-card" ></i>
             <div class = "record-display">
                 <h2>Available Contacts: </h2>
-                <ul>
-                    
-                    <% for (let i of contact_list) { %> 
-                    <div class="contact"> 
-                            <li>
-                                <p><%= i.name %></p>
-                                <p><%= i.phone %></p>
-                            </li>
-                        </div>
-                        <div class="delete-button">
-                            <i class="fa-solid fa-user-slash"></i>
-                            <a href="/delete-contact/?phone=<%= i.phone %>">
-                                delete
-                            </a>
-                        </div>
-                    <% } %>
-                </ul>
+                <div id="record-conatiner">
+                    <ul style="list-style-type:none;">
+                        
+                            <% for (let i of contact_list) { %> 
+                                <div class="record-el"> 
+                                        <li>
+                                            <p><%= i.name %></p>
+                                            <p><%= i.phone %></p>
+                                        </li>
+                                        <button type = "button" class="delete-btn">
+                                            <i class="fa-solid fa-user-slash"></i>
+                                            <a href="/delete-contact/?phone=<%= i.phone %>">
+                                                delete
+                                            </a>
+                                        </button>
+                                </div>
+                            <% } %>
+                    </ul>
+                </div>
             </div>
+
+
+
             <div class = "record-input">
-                <h2>Contact Details</h2>
+                <h2>New Contact Details</h2>
                 <div class = "entry-form"></div>
                     <form action="/create-contact" method="POST">
                         <input type="text" name="name" placeholder="Enter name" required>
                         <input type="number" name="phone" placeholder="Enter phone" required>
                         <button type="submit" class="fa-solid fa-user-plus">Add contact</button>
-                        <!-- <i class="fa-solid fa-user-plus"></i> -->
                     </form>
                 </div>
             </div>
+            
             <script type="text/javascript" src="/js/home.js"></script>
         </div>
     </body>
