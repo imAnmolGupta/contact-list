@@ -67,7 +67,7 @@ app.post('/create-contact', function(req, res){
 
 });
 
-app.listen(process.env.PORT, function(err){
+app.listen(port, function(err){
     if (err) {
         console.log("Error in running the server", err);
     }
