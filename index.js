@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
-const port = 8000;
+require('dotenv').config();
+const mongoose=require('mongoose');
+const port = process.env.PORT || 3000;
 
-const db = require('./config/mongoose');
+//const db = require('./config/mongoose');
+const DB=process.env.DATABASE_URL;
 const Contact = require('./models/contact');
 
 const app = express();
@@ -12,6 +15,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded());
 app.use(express.static('assets'));
 
+
+mongoose.connect(DB,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(()=> {
+    console.log('connection successful');
+}).catch((err)=>console.log('No connection'))
 
 var contactList = [
     {
@@ -72,7 +82,7 @@ app.listen(port, function(err){
         console.log("Error in running the server", err);
     }
     console.log('Yup!My Server is running on Port', port);
-})
+});
 
 
 app.get('/delete-contact/', function(req, res){
@@ -85,7 +95,7 @@ app.get('/delete-contact/', function(req, res){
             return;
         }
         return res.redirect('back');
-    })
+    });
 
 
    
